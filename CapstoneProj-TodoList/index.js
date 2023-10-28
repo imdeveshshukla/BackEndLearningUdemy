@@ -22,7 +22,7 @@ app.get("/create",(req,res)=>{
 
 app.post("/",(req,res)=>{
     res.render("index.ejs", { title:req.body.title , content : req.body.content});
-    console.log(req.body);
+    // console.log(req.body);
 });
 
 app.listen(port,()=>{
