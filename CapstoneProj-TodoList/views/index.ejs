@@ -1,23 +1,16 @@
 <%- include("patches/header.ejs") %>
-
-
+<% var newBlog = [] %>
 
 <div class="main">
-    <% int a[] = {}; %>
-    
     <ul style="list-style: none;">
-        <li>
-            <head><a href=""> Blog 1</a></head>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque necessitatibus cumque nam quae veniam fuga repellendus, natus culpa maiores, dolor dignissimos hic iure consequatur nihil sed blanditiis assumenda tenetur sint.</p>
-        </li>
-        <li>
-            <head><a href=""> Blog 2</a></head>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque necessitatibus cumque nam quae veniam fuga repellendus, natus culpa maiores, dolor dignissimos hic iure consequatur nihil sed blanditiis assumenda tenetur sint.</p>
-        </li>
-        <li>
-            <head><a href=""> Blog 3</a></head>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque necessitatibus cumque nam quae veniam fuga repellendus, natus culpa maiores, dolor dignissimos hic iure consequatur nihil sed blanditiis assumenda tenetur sint.</p>
-        </li>
+        <% if(locals.Newblog) {%>
+            <% for (const x of Newblog) {%>
+            <li>
+                <head><a href="/blogs/<%= x.id %>"><%= x.title %></a></head>
+                <p><%= x.content %></p>
+            </li>
+            <% } %>
+        <% } %>
         
     </ul>
 </div>
